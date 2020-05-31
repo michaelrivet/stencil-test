@@ -1,0 +1,11 @@
+{
+  "normalStoreUrl": "https://stencil-test.mybigcommerce.com/?ctk=bd7e8d28-ba73-43c3-ab55-c29bff589adb",
+  "accessToken": "ek6le1nx76xsy3pqrnqjl6hfavt62q0",
+  "port": 3000,
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}
