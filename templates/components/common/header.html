@@ -1,3 +1,9 @@
+<div class="banners">
+        
+    <div class="banner">
+        <h2 style="color:white;">Add 3 Amazing Products With One Click!</h2>
+    </div>
+    </div>
 {{#if banners.top}}
 <div class="banners" data-banner-location="top">
     {{#each (limit banners.top_metadata 1)}}
@@ -9,6 +15,7 @@
     {{/each}}
 </div>
 {{/if}}
+
 <header class="header" role="banner">
     <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
         <span class="mobileMenu-toggleIcon">Toggle menu</span>
@@ -27,5 +34,6 @@
     <div class="navPages-container" id="menu" data-menu>
         {{> components/common/navigation-menu}}
     </div>
+    
 </header>
 {{{region name="header_bottom"}}}
