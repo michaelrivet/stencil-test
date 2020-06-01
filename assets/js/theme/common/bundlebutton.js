@@ -46,15 +46,21 @@ function getCart(url) {
 };
 
 const bundleAdd = () => {
-    let cart = getCart('/api/storefront/carts?include=lineItems.digitalItems.options,lineItems.physicalItems.options')
-        .then(data => console.log(JSON.stringify(data)))
-                
-    let cartId = cart[0].id;
+    getCart('/api/storefront/carts?include=lineItems.digitalItems.options,lineItems.physicalItems.options')
+    .then(cart => {
+        console.log(JSON.stringify(cart))
+        // If the data did not return the ID we need to add an item log and return early
+        if(!cart || !cart[0] || !cart[0].id){
+            console.warn('getCart did not return id');
+            return;
+        }
+            
+        let cartId = cart[0].id;
 
-    addCartItem(cartURL, cartId, bundleItems)
-      .then(data => console.log(JSON.stringify(data)))
-      .catch(error => console.error(error));
-
+        addCartItem(cartURL, cartId, bundleItems)
+            .then(data => console.log(JSON.stringify(data)))
+            .catch(error => console.error(error));
+    });
 };
 
 
